@@ -12,5 +12,9 @@ return {
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   { import = "astrocommunity.completion.cmp-cmdline" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   -- import/override with your plugins folder
 }
