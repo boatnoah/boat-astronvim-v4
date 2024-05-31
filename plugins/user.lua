@@ -21,18 +21,48 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        "  ⟋|､",
+        " (°､ ｡ 7",
+        " |､  ~ヽ",
+        " じしf_,)〳",
       }
+
+      -- customize the dashboard buttons
+      opts.section.buttons.val = {
+        {
+          type = "button",
+          val = "Find Files",
+          on_press = function()
+            local key = vim.api.nvim_replace_termcodes("<leader>ff", true, false, true)
+            vim.api.nvim_feedkeys(key, "normal", false)
+          end,
+          opts = {
+            position = "center",
+            shortcut = "SPC f f",
+            cursor = 5,
+            width = 22,
+            align_shortcut = "right",
+            hl_shortcut = "AlphaShortcut",
+          },
+        },
+        {
+          type = "button",
+          val = "Find Word",
+          on_press = function()
+            local key = vim.api.nvim_replace_termcodes("<leader>fw", true, false, true)
+            vim.api.nvim_feedkeys(key, "normal", false)
+          end,
+          opts = {
+            position = "center",
+            shortcut = "SPC f w",
+            cursor = 5,
+            width = 22,
+            align_shortcut = "right",
+            hl_shortcut = "AlphaShortcut",
+          },
+        },
+      }
+
       return opts
     end,
   },

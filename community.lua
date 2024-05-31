@@ -17,7 +17,6 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity.startup.fsplash-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   -- import/override with your plugins folder
 }

@@ -1,31 +1,55 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
   dependencies = { "MunifTanjim/nui.nvim" },
-  opts = function(_, opts)
-    local utils = require "astrocore"
-    return utils.extend_tbl(opts, {
-      lsp = {
-        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+  opts = {
+    lsp = {
+      override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
+      },
+      signature = {
+        enabled = false,
+      },
+      hover = {
+        enabled = false,
+      },
+      progress = {
+        enabled = false,
+      },
+    },
+    presets = {
+      long_message_to_split = false,
+    },
+    views = {
+      cmdline_popup = {
+        position = {
+          row = 10,
+          col = "50%",
         },
-        signature = {
-          enabled = false,
-        },
-        hover = {
-          enabled = false,
+        size = {
+          width = 60,
+          height = "auto",
         },
       },
-      presets = {
-        bottom_search = true, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
-        long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = utils.is_available "inc-rename.nvim", -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
+      popupmenu = {
+        relative = "editor",
+        position = {
+          row = 8,
+          col = "50%",
+        },
+        size = {
+          width = 60,
+          height = 10,
+        },
+        border = {
+          style = "single",
+          padding = { 0, 1 },
+        },
+        win_options = {
+          winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+        },
       },
-    })
-  end,
+    },
+  },
 }
