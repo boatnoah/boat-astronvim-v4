@@ -5,12 +5,11 @@
 -- Set up custom filetypes
 vim.filetype.add {
   extension = {
-    foo = "fooscript",
-  },
-  filename = {
-    ["Foofile"] = "fooscript",
+    ejs = "html", -- Associate .ejs files with the HTML filetype
   },
   pattern = {
-    ["~/%.config/foo/.*"] = "fooscript",
+    -- Associate any file in the specified directories with the HTML filetype
+    ["^views/.*%.ejs$"] = "html",
+    ["^templates/.*%.ejs$"] = "html",
   },
 }

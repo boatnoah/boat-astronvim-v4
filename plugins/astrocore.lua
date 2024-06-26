@@ -9,6 +9,7 @@ return {
   ---@type AstroCoreOpts
   opts = {
     -- Configure core features of AstroNvim
+
     features = {
       large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
@@ -68,12 +69,6 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-        ["<F6>"] = { "<cmd>CompilerOpen<cr>", desc = "Open Compiler" },
-      },
-      t = {
-        -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
-        ["<leader><esc>"] = { "<C-\\><C-n>", desc = "Insert mode in term" },
       },
     },
   },

@@ -11,7 +11,7 @@ return {
         dap = true,
         dap_ui = true,
         gitsigns = true,
-        illuminate = true,
+        illuminate = false,
         indent_blankline = true,
         markdown = true,
         mason = true,
